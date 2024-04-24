@@ -8,14 +8,14 @@ function App() {
   const passwordRef = useRef(null);
   const PasswordGenerator = useCallback(() => {
     let password = "";
-    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvyxyz";
+    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwyxyz";
     if (isNumberAllowed)
       str += "1234567890";
     if (isCharacterAllowed)
       str += "!@#$%&*()";
-    for (let i = 1; i <=length; i++)
+    for (let i = 0; i <length; i++)
     {
-      let Char = Math.floor(Math.random() * str.length + 1);
+      let Char = Math.floor(Math.random() * str.length );
       password += str.charAt(Char);
     }
     setpassword(password);
@@ -32,7 +32,7 @@ function App() {
     window.navigator.clipboard.writeText(password);
   },[password]);
   return (
-    <div className="bg-black w-full h-screen text-white flex items-center ">
+    <div className="bg-[url('./images/background.jpg')] bg-repeat-no-repeat bg-cover w-full h-screen text-white flex items-center ">
       <div className='text-3xl text-center mx-auto bg-gray-800 rounded-lg w-[50%]'>
         Password Generator
       <div className='flex flex-wrap justify-center align-center gap-2' >
