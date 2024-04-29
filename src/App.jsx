@@ -33,14 +33,14 @@ function App() {
   },[password]);
   return (
     <div className="bg-[url('./images/background.jpg')] bg-repeat-no-repeat bg-cover w-full h-screen text-white flex items-center ">
-      <div className='text-3xl text-center mx-auto bg-gray-800 rounded-lg w-[50%]'>
-        Password Generator
+      <div className='text-2xl md:text-3xl text-center mx-auto bg-gray-800 rounded-lg w-[80%] md:w-[66%]'>
+        <h2 className='text-center '>Password Generator</h2>
       <div className='flex flex-wrap justify-center align-center gap-2' >
-          <input type="text " value={password} ref={passwordRef} readOnly className='my-2 text-red-500 outline-none w-[70%]'/>
+          <input type="text " value={password} ref={passwordRef} readOnly className='my-2 text-red-500 outline-none  w-[80%] md:w-[60%]'/>
         <label htmlFor=""><button className='my-2 text-[15px] bg-blue-600 rounded-lg h-11 px-3 ' onClick={copyPassword}>Copy</button></label>
         </div>
         <div>
-          <input type="range" min={5} max={50} value={length} onChange={(e)=>setlength(e.target.value)}/>
+          <input type="range" min={5} max={30} value={length} onChange={(e)=>setlength(e.target.value)}/>
         </div>
         <div className='text-[15px] text-orange-500'>
           <div>length:{length}</div>
